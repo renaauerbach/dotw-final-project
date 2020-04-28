@@ -1,8 +1,55 @@
 * {
-    margin: 0;
-    padding: 0;
     font-family: Tahoma, Geneva, sans-serif;
 }
+
+.container {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container h1 {
+    display: block;
+}
+
+.nav-bar {
+    top: 100%;
+    display: block;
+}
+
+.link-container {
+    display: inline;
+    float: left;
+    padding: 20px;
+    text-align: center;
+    margin: 40px;
+}
+
+.link-container p {
+    display: none;
+}
+
+.link-container p:hover {
+    display: inline;
+}
+
+a {
+    display: block;
+}
+
+img.nav-img {
+    filter: grayscale(100%);
+}
+
+img.nav-img:hover {
+    filter: none;
+    transform: scale(1.7);
+}
+
+/***************** NETFLIX PAGE *******************/
 
 .grid {
     display: grid;
@@ -14,9 +61,8 @@
     height: 100vh;
 }
 
-.netflix-imgs {
-    width: 100%;
-    height: 100%;
+.grid-imgs {
+    position: relative;
     object-fit: cover;
 }
 
@@ -58,3 +104,46 @@ h3 {
     vertical-align: middle;
     line-height: normal;
 }
+
+/*.fly-in.hidden img {
+    opacity: 0;
+}*/
+
+/*.fly-in.hidden img:nth-child(1) {
+    transform: translateX(-200px) translateY(-200px);
+}
+
+.fly-in.hidden img:nth-child(2) {
+    transform: translateX(20px) translateY(100px);
+}
+
+.fly-in.hidden img:nth-child(3) {
+    transform: translateX(-150px) translateY(-80px);
+}
+
+.fly-in.hidden img:nth-child(4) {
+    transform: translateX(10px) translateY(-200px);
+}
+
+.fly-in.hidden img:nth-child(5) {
+    transform: translateX(-300px) translateY(200px);
+}
+
+.fly-in.hidden img:nth-child(6) {
+    transform: translateX(20px) translateY(-20px);
+}
+
+.fly-in.hidden img:nth-child(7) {
+    transform: translateX(30px) translateY(200px);
+}*/
+/*.fly-in.hidden img:nth-child(8) {
+    transform: translateX(30px) translateY(200px);
+}
+
+.fly-in.hidden img:nth-child(9) {
+    transform: translateX(30px) translateY(200px);
+}*/
+
+/******************* DOG PAGE *********************/
+
+/******************* COLOR PAGE *******************/
