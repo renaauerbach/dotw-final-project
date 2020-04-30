@@ -6,12 +6,14 @@ html,
 body {
     margin: 0;
     padding: 0;
-    background: #000;
+    /*background: #000;*/
+    overflow: hidden;
 }
 
 .container {
     margin: 0;
     height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,7 +22,53 @@ body {
 
 .container h1 {
     display: block;
+    font-size: 250%;
+    font-style: italic;
 }
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/*.gradient {
+    border-width: 3px;
+    background: #1d1f20;
+
+    position: relative;
+    border-radius: 3px;
+}
+
+.gradient:after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(60deg,
+        #f79533,
+        #f37055,
+        #ef4e7b,
+        #a166ab,
+        #5073b8,
+        #1098ad,
+        #07b39b,
+        #6fba82);
+    border-radius: 6px;
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+}*/
 
 .nav-bar {
     top: 100%;
@@ -35,28 +83,50 @@ body {
     margin: 40px;
 }
 
-.link-container p {
-    display: none;
-}
-
-.link-container p:hover {
+p.hidden {
     display: inline;
-}
-
-a {
-    display: block;
+    color: #ffffff;
+    padding-top: 75px;
+    font-size: 200%;
 }
 
 img.nav-img {
     filter: grayscale(100%);
 }
 
-img.nav-img:hover {
+a.nav-link {
+    display: block;
+    margin-bottom: 50px;
+}
+
+.link-container:hover p.hidden {
+    color: #000000;
+}
+
+.link-container:hover img.nav-img {
     filter: none;
-    transform: scale(1.7);
+    transform: scale(1.3);
 }
 
 /***************** NETFLIX PAGE *******************/
+
+@keyframes fades {
+    0% {
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
 
 .grid {
     z-index: -5;
@@ -76,10 +146,6 @@ img.nav-img:hover {
 
 .fly-in {
     list-style: none;
-    /*    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);*/
 }
 
 .fly-in img {
@@ -92,24 +158,11 @@ img.nav-img:hover {
     margin-right: 0;
 }
 
-.netflix-text {
-    position: relative;
-}
-
-marquee {
-    visibility: show;
-    z-index: 10001;
-    font-style: italic;
-    position: absolute;
-    display: inline-block;
-    line-height: normal;
-}
-
-/*.fly-in.hidden img {
+.fly-in.hidden img {
     opacity: 0;
-}*/
+}
 
-/*.fly-in.hidden img:nth-child(1) {
+.fly-in.hidden img:nth-child(1) {
     transform: translateX(-200px) translateY(-200px);
 }
 
@@ -135,15 +188,50 @@ marquee {
 
 .fly-in.hidden img:nth-child(7) {
     transform: translateX(30px) translateY(200px);
-}*/
-/*.fly-in.hidden img:nth-child(8) {
+}
+
+.fly-in.hidden img:nth-child(8) {
     transform: translateX(30px) translateY(200px);
 }
 
 .fly-in.hidden img:nth-child(9) {
     transform: translateX(30px) translateY(200px);
-}*/
+}
+
+.netflix-text {
+    position: relative;
+}
+
+marquee {
+    visibility: show;
+    z-index: 10001;
+    font-style: italic;
+    position: absolute;
+    display: inline-block;
+    line-height: normal;
+}
 
 /******************* DOG PAGE *********************/
+
+video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    /*    background: url(media/dog/dog.mp4) no-repeat;
+    background-size: cover;*/
+}
+
+audio {
+    mix-blend-mode: multiply;
+    position: fixed;
+    z-index: 6;
+}
 
 /******************* COLOR PAGE *******************/
