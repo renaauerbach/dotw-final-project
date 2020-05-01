@@ -1,14 +1,10 @@
 /***************** NAVIGATION PAGE *******************/
 
-let svgs = document.querySelectorAll('.link-container');
-let netflix = svgs[0].children;
-let paw = svgs[1].children;
-let paint = svgs[2].children;
+let svg = document.getElementById('netflix');
 
-// hover = svg => {
-//     let text = svg.querySelector('p');
-//     text.classList.remove('hidden');
-//     text.style.transform = 'scale(1.7)';
-// };
+hover = () => {
+    let doc = svg.contentDoc;
+    console.log(doc);
+};
 
-// document.addEventListener('mouseover', hover);
+svg.addEventListener('mouseover', hover);
