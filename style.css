@@ -79,16 +79,29 @@ a.nav-link {
     transform: scale(1.3);
 }
 
+/****** BACK ARROWS ******/
+@keyframes arrow {
+    from {
+        transform: translateX(-300px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
 header.back a {
     position: absolute;
     display: inline-block;
     top: 0;
-    left: 10px;
+    left: 15px;
     color: #ffffff;
     z-index: 10001;
     font-weight: 700;
     font-size: 20px;
     text-decoration: none;
+    animation: arrow 2s 1 linear;
+    transition: transform 2s;
 }
 
 /***************** NETFLIX PAGE *******************/
@@ -198,19 +211,20 @@ marquee {
 
 body#dog {
     background: url(media/dog/yard.png) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
 }
 
 video {
     position: fixed;
-    top: 50%;
+    top: 17%;
     left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -100;
+    filter: opacity(70%);
+    max-width: 100%;
+    z-index: -1000;
     -ms-transform: translateX(-50%) translateY(-50%);
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
@@ -220,14 +234,45 @@ video {
 audio {
     mix-blend-mode: multiply;
     position: fixed;
-    z-index: 6;
+    bottom: 0;
+    z-index: 100;
     right: 0;
+}
+
+/* Images */
+
+div#foreground {
+    background: url(media/dog/foreground.png) no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    /*z-index: 9;*/
+    bottom: 0;
+    left: 0;
 }
 
 img.play {
     position: fixed;
     display: inline;
     z-index: 5;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+img.play.d1,
+img.play.d2 {
+    animation: wiggle 1s infinite ease-in-out;
 }
 
 .play.d1 {
@@ -238,6 +283,25 @@ img.play {
 .play.d2 {
     left: 20%;
     top: 50%;
+}
+
+@keyframes bouncing {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+img.play.d3,
+img.play.d4 {
+    animation: bouncing 1s infinite ease-in-out;
 }
 
 .play.d3 {
