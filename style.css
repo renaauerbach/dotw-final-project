@@ -315,3 +315,11 @@ img.play.d4 {
 }
 
 /******************* COLOR PAGE *******************/
+
+div.picture {
+    cursor: url('media/color/brush.svg'), auto;
+}
+
+.picture object {
+    max-width: 1007vw;
+}

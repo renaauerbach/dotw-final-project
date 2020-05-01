@@ -62,7 +62,3 @@ let marqueeText = setInterval(() => {
 }, 2000);
 
 window.addEventListener('load', flyIn);
-
-/******************* DOG PAGE *********************/
-
-/******************* COLOR PAGE *******************/
