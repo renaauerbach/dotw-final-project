@@ -202,6 +202,12 @@ marquee {
 
 /******************* DOG PAGE *********************/
 
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+    animation-play-state: paused !important;
+}
+
 body#dog {
     background: url(media/dog/yard.png) no-repeat center center fixed;
     background-size: cover;
