@@ -95,34 +95,19 @@ header.back a {
     display: inline-block;
     top: 0;
     left: 15px;
-    color: #ffffff;
     z-index: 10001;
-    font-weight: 700;
-    font-size: 20px;
     text-decoration: none;
     animation: arrow 2s 1 linear;
     transition: transform 2s;
 }
 
-/***************** NETFLIX PAGE *******************/
-
-@keyframes fades {
-    0% {
-        opacity: 0;
-    }
-
-    15% {
-        opacity: 1;
-    }
-
-    85% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
+img#back-arrow {
+    display: inline;
+    width: 100px;
+    height: 65px;
 }
+
+/***************** NETFLIX PAGE *******************/
 
 .grid {
     z-index: -5;
@@ -138,6 +123,8 @@ header.back a {
     position: relative;
     height: 100%;
     width: 100%;
+    opacity: 1;
+    transition: 1s;
 }
 
 .fly-in {
@@ -148,6 +135,12 @@ header.back a {
     display: inline-block;
     opacity: 1;
     transition: all 2.5s ease;
+}
+
+img.active {
+    transform: scaleX(3) scaleY(3);
+    transform-origin: center;
+    z-index: 500;
 }
 
 .fly-in img:last-child {
@@ -179,7 +172,7 @@ header.back a {
 }
 
 .fly-in.hidden img:nth-child(6) {
-    transform: translateX(20px) translateY(-20px);
+    transform: translateX(-20px) translateY(-20px);
 }
 
 .fly-in.hidden img:nth-child(7) {
@@ -187,11 +180,11 @@ header.back a {
 }
 
 .fly-in.hidden img:nth-child(8) {
-    transform: translateX(30px) translateY(200px);
+    transform: translateX(30px) translateY(-200px);
 }
 
 .fly-in.hidden img:nth-child(9) {
-    transform: translateX(30px) translateY(200px);
+    transform: translateX(70px) translateY(-100px);
 }
 
 .netflix-text {

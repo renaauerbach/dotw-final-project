@@ -1,10 +1,26 @@
 /***************** NAVIGATION PAGE *******************/
 
-let svg = document.getElementById('netflix');
+let startTime = new Date().getTime();
+let drawCircles = setInterval(() => {
+    if (new Date().getTime() - startTime > 30000) {
+        clearInterval(drawCircles);
+        return;
+    }
+    let colors = [
+        'rgba(255, 255, 255, 0.2)',
+        'rgba(255, 255, 255, 0.4)',
+        'rgba(255, 255, 255, 0.6)',
+        'rgba(255, 255, 255, 0.8)',
+        'rgba(255, 255, 255, 1)',
+    ];
 
-hover = () => {
-    let doc = svg.contentDoc;
-    console.log(doc);
-};
+    let container = document.querySelector('body');
+    let circle;
 
-svg.addEventListener('mouseover', hover);
+    circle.style.color = colors[Math.floor(Math.random() * colors.length)];
+    circle.style.top = Math.floor(Math.random() * fullHeight + 1) + 'px';
+
+    container.appendChild(circle);
+}, 2000);
+
+window.addEventListener('load', drawCircles);

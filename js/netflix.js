@@ -1,5 +1,6 @@
 /***************** NETFLIX PAGE *******************/
 
+// Animate images to "fly in" on load
 function flyIn() {
     let grid = document.querySelector('.fly-in');
     setTimeout(() => {
@@ -7,26 +8,28 @@ function flyIn() {
     }, 500);
 }
 
-function slideIn() {
-    var imgs = document.querySelector('grid').children;
-    interval = 8000;
-    currentPic = 0;
-    imgs[currentPic].style.webkitAnimation = 'fadey ' + interval + 'ms';
-    imgs[currentPic].style.animation = 'fadey ' + interval + 'ms';
-    var infiniteLoop = setInterval(function() {
-        imgs[currentPic].removeAttribute('style');
-        if (currentPic == imgs.length - 1) {
-            currentPic = 0;
-        } else {
-            currentPic++;
-        }
-        imgs[currentPic].style.webkitAnimation = 'fadey ' + interval + 'ms';
-        imgs[currentPic].style.animation = 'fadey ' + interval + 'ms';
-    }, interval);
+// Animate images to fullscreen
+const pics = document.querySelectorAll('grid-img');
+const images = [...pics];
+
+setTimeout(() => {
+    for (let i = 0; i < images.length; i++) {
+        setTimeout(() => {
+            fullScreen(images[i]);
+        }, 3000 * i);
+    }
+}, 4000);
+
+function fullScreen(img) {
+    img.classList.add('active');
+
+    setTimeout(() => {
+        img.classList.remove('active');
+    }, 3000);
 }
 
+// Generate marquee text
 let startTime = new Date().getTime();
-console.log(window.innerHeight);
 let marqueeText = setInterval(() => {
     if (new Date().getTime() - startTime > 30000) {
         clearInterval(marqueeText);
