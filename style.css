@@ -68,6 +68,12 @@ a.nav-link {
     margin-bottom: 50px;
 }
 
+#circles {
+    z-index: -1;
+    display: inline;
+    float: left;
+}
+
 /**** SHOW CHILD ELEMENTS ON PARENT HOVER ***/
 
 .link-container:hover p.hidden {
