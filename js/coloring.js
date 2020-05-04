@@ -1,10 +1,10 @@
 /***************** NAVIGATION PAGE *******************/
 
-let svg = document.getElementById('netflix');
-
-hover = () => {
-    let doc = svg.contentDoc;
-    console.log(doc);
+color = e => {
+    if (e.classList.contains('center')) {
+        e.classList.remove('hidden');
+    } else {
+        e.parentNode.classList.remove('hidden');
+    }
 };
 
-svg.addEventListener('mouseover', hover);

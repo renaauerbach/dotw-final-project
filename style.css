@@ -315,6 +315,19 @@ img.play.d4 {
 }
 
 /******************* COLOR PAGE *******************/
+@keyframes spin {
+    0% {
+        transform: scale(0) rotateZ(0);
+    }
+
+    50% {
+        transform: scale(0.5) rotateZ(180deg);
+    }
+
+    100% {
+        transform: scale(1) rotateZ(360deg);
+    }
+}
 
 div.picture {
     cursor: url('media/color/brush.svg'), auto;
@@ -322,4 +335,5 @@ div.picture {
 
 .picture object {
     max-width: 1007vw;
+    animation: spin 2s 1 linear;
 }
