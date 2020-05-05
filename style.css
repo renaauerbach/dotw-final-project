@@ -290,7 +290,6 @@ div#foreground {
     background: url(media/dog/foreground.png) no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
-    /*z-index: 9;*/
     bottom: 0;
     left: 0;
 }
@@ -328,6 +327,23 @@ img.play.d2 {
 .play.d2 {
     left: 20%;
     top: 50%;
+}
+
+.bone {
+    z-index: 1000;
+    position: fixed;
+    display: inline;
+    width: 3%;
+}
+
+.bone.b1 {
+    right: 33%;
+    top: 61%;
+}
+
+.bone.b2 {
+    left: 20%;
+    top: 64%;
 }
 
 @keyframes bouncing {
