@@ -9,6 +9,12 @@ body {
     overflow: hidden;
 }
 
+body#nav {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 .container {
     margin: 0;
     height: 100vh;
@@ -68,11 +74,11 @@ a.nav-link {
     margin-bottom: 50px;
 }
 
-#circles {
+/*#circles {
     z-index: -1;
     display: inline;
     float: left;
-}
+}*/
 
 /**** SHOW CHILD ELEMENTS ON PARENT HOVER ***/
 
@@ -133,6 +139,7 @@ img#back-arrow {
     transition: 1s;
 }
 
+/* FLY-IN ANIMATION */
 .fly-in {
     list-style: none;
 }
@@ -141,12 +148,6 @@ img#back-arrow {
     display: inline-block;
     opacity: 1;
     transition: all 2.5s ease;
-}
-
-img.active {
-    transform: scaleX(3) scaleY(3);
-    transform-origin: center;
-    z-index: 500;
 }
 
 .fly-in img:last-child {
@@ -193,6 +194,45 @@ img.active {
     transform: translateX(70px) translateY(-100px);
 }
 
+/* FULL-SCREEN ANIMATION*/
+img.active {
+    transform: scaleX(3) scaleY(3);
+    transform-origin: center;
+    z-index: 500;
+}
+
+img:nth-child(1).active {
+    transform: scaleX(3) scaleY(3) translate(33%, 33%);
+}
+
+img:nth-child(2).active {
+    transform: scaleX(3) scaleY(3) translateY(33%);
+}
+
+img:nth-child(3).active {
+    transform: scaleX(3) scaleY(3) translate(-33%, 33%);
+}
+
+img:nth-child(4).active {
+    transform: scaleX(3) scaleY(3) translateX(33%);
+}
+
+img:nth-child(6).active {
+    transform: scaleX(3) scaleY(3) translateX(-33%);
+}
+
+img:nth-child(7).active {
+    transform: scaleX(3) scaleY(3) translate(33%, -33%);
+}
+
+img:nth-child(8).active {
+    transform: scaleX(3) scaleY(3) translateY(-33%);
+}
+
+img:nth-child(9).active {
+    transform: scaleX(3) scaleY(3) translate(-33%, -33%);
+}
+
 .netflix-text {
     position: relative;
 }
@@ -204,6 +244,89 @@ marquee {
     position: absolute;
     display: inline-block;
     line-height: normal;
+}
+
+/* CLOCK */
+@keyframes rotate {
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(300px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
+div.clock {
+    display: inline-block;
+    z-index: 1000;
+    float: right;
+    background: url(media/netflix/clock.svg) no-repeat center;
+    padding-bottom: 22%;
+    position: absolute;
+    width: 8em;
+    right: 3em;
+    animation: slide 2s 1 linear;
+    transition: transform 2s;
+}
+
+.minutes-container,
+.hours-container,
+.seconds-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.hours {
+    background: #fff;
+    height: 10%;
+    left: 48.75%;
+    position: absolute;
+    top: 40%;
+    transform-origin: 50% 100%;
+    width: 2.5%;
+}
+
+.minutes {
+    background: #fff;
+    height: 20%;
+    left: 49%;
+    position: absolute;
+    top: 30%;
+    transform-origin: 50% 100%;
+    width: 2%;
+}
+
+.seconds {
+    background: #fff;
+    height: 22.5%;
+    left: 49.5%;
+    position: absolute;
+    top: 30%;
+    transform-origin: 50% 80%;
+    width: 1%;
+    z-index: 8;
+}
+
+.hours-container {
+    animation: rotate 4320s infinite linear;
+}
+
+.minutes-container {
+    animation: rotate 360s infinite linear;
+}
+
+.seconds-container {
+    animation: rotate 6s infinite linear;
 }
 
 /******************* DOG PAGE *********************/

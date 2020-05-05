@@ -1,4 +1,6 @@
 /***************** NETFLIX PAGE *******************/
+let height = window.innerHeight;
+let width = window.innerWidth;
 
 // Animate images to "fly in" on load
 function flyIn() {
@@ -9,23 +11,28 @@ function flyIn() {
 }
 
 // Animate images to fullscreen
-const pics = document.querySelectorAll('grid-img');
+const pics = document.querySelectorAll('.grid-img');
 const images = [...pics];
 
-setTimeout(() => {
-    for (let i = 0; i < images.length; i++) {
-        setTimeout(() => {
-            fullScreen(images[i]);
-        }, 3000 * i);
-    }
-}, 4000);
+// Initiate first fullScreen iteration while waiting for interval to begin
+fullScreen();
+setInterval(() => {
+    fullScreen();
+}, 31000);
 
-function fullScreen(img) {
-    img.classList.add('active');
-
+function fullScreen() {
     setTimeout(() => {
-        img.classList.remove('active');
-    }, 3000);
+        for (let i = 0; i < images.length; i++) {
+            // Timeout to prevent images from all aniamting at once
+            setTimeout(() => {
+                images[i].classList.add('active');
+                // Timeout to give current image pause at top
+                setTimeout(() => {
+                    images[i].classList.remove('active');
+                }, 3000);
+            }, 3000 * i);
+        }
+    }, 4000);
 }
 
 // Generate marquee text
@@ -47,8 +54,6 @@ let marqueeText = setInterval(() => {
     let marquee = document.createElement('marquee');
     let text = document.createTextNode('Are you still watching?');
 
-    let fullHeight = window.innerHeight;
-
     // Add text to marquee
     marquee.appendChild(text);
 
@@ -58,7 +63,9 @@ let marqueeText = setInterval(() => {
 
     // Assign text opacity by randomly selecting a color from colors array (differ in opacity)
     marquee.style.color = colors[Math.floor(Math.random() * colors.length)];
-    marquee.style.top = Math.floor(Math.random() * fullHeight + 1) + 'px';
+
+    // Assign random position
+    marquee.style.top = Math.floor(Math.random() * height + 1) + 'px';
     marquee.scrollAmount = 20;
 
     container.appendChild(marquee);
