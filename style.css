@@ -310,7 +310,7 @@ img.play.d2 {
 }
 
 .bone {
-    z-index: 1000;
+    z-index: 4;
     position: fixed;
     display: inline;
     width: 3%;
@@ -318,12 +318,12 @@ img.play.d2 {
 
 .bone.b1 {
     right: 33%;
-    top: 61%;
+    top: 63%;
 }
 
 .bone.b2 {
     left: 20%;
-    top: 64%;
+    top: 68%;
 }
 
 @keyframes bouncing {

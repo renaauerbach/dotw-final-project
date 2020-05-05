@@ -71,4 +71,9 @@ let marqueeText = setInterval(() => {
     container.appendChild(marquee);
 }, 2000);
 
-window.addEventListener('load', flyIn);
+window.addEventListener('load', showPage);
+
+function showPage() {
+    document.body.classList.remove('js-loading');
+    document.addEventListener('load', flyIn);
+}
