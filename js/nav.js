@@ -5,8 +5,13 @@ let width = window.innerWidth;
 let height = window.innerHeight;
 
 let svgNS = 'http://www.w3.org/2000/svg';
-let svg = document.getElementById('circles');
+let svg = document.createElementNS(svgNS, 'svg');
+// let svg = document.querySelector('svg');
 svg.setAttribute('viewBox', '0 0 ' + width + ' ' + height);
+svg.setAttribute('version', '1.1');
+svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+svg.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink');
+svg.setAttribute('preserveAspectRatio', 'none');
 
 let drawCircles = setInterval(() => {
     let colors = [
@@ -29,10 +34,7 @@ let drawCircles = setInterval(() => {
         '#ff7000',
     ];
 
-    // let svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    // let svgNS = svg.namespaceURI;
     let circle = document.createElementNS(svgNS, 'circle');
-    // Math.floor(Math.random() * (max - min + 1) + min)
 
     circle.setAttribute(
         'fill',
@@ -43,4 +45,10 @@ let drawCircles = setInterval(() => {
     circle.setAttribute('cy', Math.floor(Math.random() * height) + 1);
 
     svg.appendChild(circle);
+    let svgCode = window.btoa(svg.innerHTML);
+
+    document.getElementsByClassName('container')[0].style.backgroundImage =
+        "url('data:image/svg+xml;utf8," + svgCode + "')";
+    // document.body.style.backgroundImage =
+    //     "url('data:image/svg+xml;utf8," + svgCode + "')";
 }, 1000);
