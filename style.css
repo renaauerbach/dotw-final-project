@@ -31,20 +31,6 @@ body#nav {
     font-style: italic;
 }
 
-@keyframes animatedgradient {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
 .nav-bar {
     top: 100%;
     display: block;
@@ -73,12 +59,6 @@ a.nav-link {
     display: block;
     margin-bottom: 50px;
 }
-
-/*#circles {
-    z-index: -1;
-    display: inline;
-    float: left;
-}*/
 
 /**** SHOW CHILD ELEMENTS ON PARENT HOVER ***/
 

@@ -17,6 +17,6 @@ The daily activities displayed are:
 
     Illustration: This page is one large, interactive SVG. When a user clicks a shape, the color assigned to the shape's parent group is revealed, making it appear as if the user is "coloring" the page.
 
-The navigation to access each of these pages consists of three page-related SVG icons, which are animated with color and scale when hovered over.
+The navigation to access each of these pages consists of three page-related SVG icons, which are animated with color and scale when hovered over, and a color-changing background controlled with Javascript.
 
-Check out my project live [here](https://i6.cims.nyu.edu/~rma453/drawing/dotw-final-project/index.html)!
+Check out my project [here](https://i6.cims.nyu.edu/~rma453/drawing/dotw-final-project/index.html)!
